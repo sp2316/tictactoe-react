@@ -1,12 +1,19 @@
 import React from "react";
-import "../css/Square.css";
 
-function Square(props) {
-  const { i, onSquareClick, board } = props;
+const style = {
+  background: "lightblue",
+  border: "2px solid darkblue",
+  fontSize: "30px",
+  fontWeight: "800",
+  cursor: "pointer",
+  outline: "none",
+};
+
+function Square({ value, onClick }) {
   return (
-    <div className="box" onClick={() => onSquareClick(i)}>
-      <div> {board[i]}</div>
-    </div>
+    <button style={style} onClick={onClick}>
+      {value}
+    </button>
   );
 }
 
